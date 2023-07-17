@@ -1,0 +1,159 @@
+$primary-color : rgb(248, 154, 169);
+$secondary-color : rgb(23, 142, 172);
+
+@mixin display-row($display){
+    display: $display;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.navigation{
+    width: 100%;
+    @include display-row();
+    background: $primary-color;
+    padding: 2rem 0rem;
+
+    &__navlinks{
+        margin-right: 2rem;
+        color: white;
+        text-decoration: none;
+        font-size: 2rem;
+    }
+}
+.product_landing{
+    width: 100%;
+    margin-top: 4rem;
+    @include display-row(flex);
+
+    &__container{
+        width: 90%;
+    }
+
+    &__grid{
+        width: 100%;
+        @include display-row(grid);
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    &__single-product{
+        text-decoration: none;
+    }
+
+    &__product-card{
+        width: 100%;
+        border: 0.2rem solid $primary-color;
+        border-radius: 0.5rem;
+    }
+
+    &__card-image{
+        width: 100%;
+        @include display-row(flex);
+        padding: 2rem 0rem;
+    }
+
+    &__card-img{
+        max-height: 16rem;
+        object-fit: contain;
+    }
+
+    &__product-title{
+        width: 100%;
+        padding-top: 1rem;
+        margin-top: 0.5rem;
+        max-height: 4rem;
+        @include display-row(flex);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background: $secondary-color;
+    }
+
+    &__title{
+        width: 70%;
+        text-align: center;
+        color: black;
+    }
+
+    &__price-cart{
+        @include display-row(flex);
+        padding-top: 2rem;
+        background: $secondary-color;
+    }
+    
+    &__product-price{
+        width: 50%;
+        @include display-row(flex);
+    }
+
+    &__price{
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    &__button{
+        width: 50%;
+        @include display-row(flex);
+    }
+
+    &__addBtn{
+        padding: 0.5rem 3rem;
+        background: $primary-color;
+        color: white;
+        font-size: 1rem;
+        border-radius: 0.5rem;
+        border: 1px white solid;
+        font-size: 1.5rem;
+        font-weight: 500;
+        &:hover{
+            background-color: darkgreen;
+            cursor: pointer;
+        }
+    }
+}
+
+.cart_page{
+    margin: 4rem 0rem;
+    width: 100%;
+    @include display-row(flex);
+
+    &__items{
+        width: 70%;
+        display: grid;
+        grid-template-rows: 1fr;
+        row-gap: 4rem;
+    }
+
+    &__item{
+        display: flex;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 1px solid green;
+        background: $secondary-color;
+    }
+
+    &__item-title{
+        width: 70%;
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+
+    &__item-price{
+        width: 20%;
+        font-size: 1.4rem;
+        color: white;
+    }
+
+    &__item-delete{
+        width: 20%;
+        color: white;
+        font-size: 1.4rem;
+        &:hover{
+            cursor: pointer;
+            color: darkblue;
+        }
+    }
+}
